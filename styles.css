@@ -1473,15 +1473,49 @@ body {
 }
 
 /* ═══════════════════════════════════════
-   ANIMATIONS
+   SCROLL ANIMATIONS
 ═══════════════════════════════════════ */
-.fade-in {
+
+.anim-fade-up {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+.anim-fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.anim-fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.anim-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.anim-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 @keyframes nuvo-pulse {
   0%, 100% { opacity: 1; text-shadow: 0 0 30px rgba(5,150,105,0.4); }

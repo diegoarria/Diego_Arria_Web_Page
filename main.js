@@ -39,17 +39,59 @@ function handleSubscribe(e) {
   }
 }
 
-// Fade-in on scroll
+// Scroll animations
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add('anim-visible');
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: 0.07 });
 
-document.querySelectorAll('.philosophy-card, .content-card, .product-card, .pillar-list li').forEach(el => {
-  el.classList.add('fade-in');
+// Fade up — general cards and blocks
+document.querySelectorAll(
+  '.philosophy-card, .content-card, .product-card, .nuvos-feat, .ebook-card, .nuvo-featured, .nuvos-waitlist, .topics-wrap'
+).forEach((el, i) => {
+  el.classList.add('anim-fade-up');
+  el.style.transitionDelay = `${(i % 4) * 80}ms`;
+  observer.observe(el);
+});
+
+// Fade left — left-side text blocks
+document.querySelectorAll(
+  '.about-text, .teaser-left, .hero-text'
+).forEach(el => {
+  el.classList.add('anim-fade-left');
+  observer.observe(el);
+});
+
+// Fade right — right-side elements
+document.querySelectorAll(
+  '.about-pillars, .teaser-right, .hero-image'
+).forEach(el => {
+  el.classList.add('anim-fade-right');
+  observer.observe(el);
+});
+
+// Scale in — section labels and titles
+document.querySelectorAll(
+  '.section-label, .section-title, .nuvos-hero-title, .teaser-title'
+).forEach(el => {
+  el.classList.add('anim-scale');
+  observer.observe(el);
+});
+
+// Stagger — pillar list items
+document.querySelectorAll('.pillar-list li').forEach((el, i) => {
+  el.classList.add('anim-fade-up');
+  el.style.transitionDelay = `${i * 90}ms`;
+  observer.observe(el);
+});
+
+// Stagger — tags
+document.querySelectorAll('.tag').forEach((el, i) => {
+  el.classList.add('anim-fade-up');
+  el.style.transitionDelay = `${i * 40}ms`;
   observer.observe(el);
 });
