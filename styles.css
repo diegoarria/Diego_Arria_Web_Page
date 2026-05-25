@@ -19,8 +19,8 @@
   --muted-2:     #9A9AA4;
   --border:      #E2DDD6;
   --border-dark: rgba(255,255,255,0.08);
-  --purple:      #7C3AED;
-  --purple-light:#A78BFA;
+  --purple:      #059669;
+  --purple-light:#34d399;
   --white:       #FFFFFF;
 
   /* Type */
@@ -372,7 +372,7 @@ body {
    NUVOS TEASER
 ═══════════════════════════════════════ */
 .nuvos-teaser {
-  background: #06030e;
+  background: #030d08;
   padding: 96px 0;
   position: relative;
   overflow: hidden;
@@ -383,7 +383,7 @@ body {
   position: absolute;
   top: -100px; left: -100px;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(5,150,105,0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -427,7 +427,7 @@ body {
 }
 
 .teaser-title span {
-  background: linear-gradient(135deg, var(--purple-light) 0%, #e879f9 100%);
+  background: linear-gradient(135deg, var(--purple-light) 0%, #6ee7b7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -453,19 +453,19 @@ body {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
-  box-shadow: 0 0 32px rgba(124,58,237,0.35);
+  box-shadow: 0 0 32px rgba(5,150,105,0.35);
 }
 
 .teaser-cta:hover {
-  background: #6d28d9;
+  background: #047857;
   transform: translateY(-2px);
-  box-shadow: 0 0 48px rgba(124,58,237,0.5);
+  box-shadow: 0 0 48px rgba(5,150,105,0.5);
 }
 
 /* App mockup */
 .app-mockup {
-  background: #0f0b1c;
-  border: 1px solid rgba(124,58,237,0.25);
+  background: #071a14;
+  border: 1px solid rgba(5,150,105,0.25);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
@@ -476,7 +476,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
-  background: #0a071a;
+  background: #041410;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -543,7 +543,7 @@ body {
 .chat-avatar {
   width: 28px; height: 28px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--purple), #a855f7);
+  background: linear-gradient(135deg, var(--purple), #10b981);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -569,8 +569,8 @@ body {
 }
 
 .chat-msg.user .chat-bubble {
-  background: rgba(124,58,237,0.25);
-  border: 1px solid rgba(124,58,237,0.3);
+  background: rgba(5,150,105,0.25);
+  border: 1px solid rgba(5,150,105,0.3);
   color: rgba(255,255,255,0.85);
   border-top-right-radius: 4px;
 }
@@ -609,7 +609,7 @@ body {
 
 .bar {
   flex: 1;
-  background: rgba(124,58,237,0.25);
+  background: rgba(5,150,105,0.25);
   border-radius: 4px 4px 0 0;
   position: relative;
   transition: background 0.2s;
@@ -619,8 +619,8 @@ body {
 }
 
 .bar.active {
-  background: linear-gradient(180deg, #a855f7, #7c3aed);
-  box-shadow: 0 0 12px rgba(124,58,237,0.5);
+  background: linear-gradient(180deg, #10b981, #059669);
+  box-shadow: 0 0 12px rgba(5,150,105,0.5);
 }
 
 .bar span {
@@ -983,9 +983,9 @@ body {
 }
 
 .product-badge.nuvo-badge {
-  background: rgba(124,58,237,0.2);
+  background: rgba(5,150,105,0.2);
   color: var(--purple-light);
-  border: 1px solid rgba(124,58,237,0.3);
+  border: 1px solid rgba(5,150,105,0.3);
 }
 
 .product-type {
@@ -1113,25 +1113,25 @@ body {
   display: grid;
   grid-template-columns: 1fr 220px;
   gap: 0;
-  background: linear-gradient(135deg, #12082e 0%, #1e1050 50%, #0e0620 100%);
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022c22 100%);
   border-radius: 18px;
   overflow: hidden;
   padding: 44px;
   position: relative;
-  border: 1px solid rgba(124,58,237,0.2);
+  border: 1px solid rgba(5,150,105,0.2);
 }
 
 .nuvo-featured::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 30%, rgba(124,58,237,0.25) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 80% 30%, rgba(5,150,105,0.25) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .nuvo-featured-left { position: relative; z-index: 1; }
 
-.nuvo-type { color: rgba(167,139,250,0.5) !important; }
+.nuvo-type { color: rgba(52,211,153,0.5) !important; }
 
 .nuvo-title {
   font-size: clamp(32px, 4.5vw, 52px);
@@ -1182,8 +1182,8 @@ body {
 .nuvo-icon-wrap {
   width: 80px; height: 80px;
   border-radius: 20px;
-  background: rgba(124,58,237,0.2);
-  border: 1px solid rgba(124,58,237,0.35);
+  background: rgba(5,150,105,0.2);
+  border: 1px solid rgba(5,150,105,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1205,7 +1205,7 @@ body {
   content: '';
   display: inline-block;
   width: 10px; height: 10px;
-  border: 2px solid rgba(167,139,250,0.3);
+  border: 2px solid rgba(52,211,153,0.3);
   border-top-color: var(--purple-light);
   border-radius: 50%;
   animation: nuvo-spin 0.9s linear infinite;
@@ -1297,7 +1297,7 @@ body {
   transition: background 0.15s, transform 0.12s;
 }
 
-.btn-nuvos:hover { background: #6d28d9; transform: translateY(-1px); }
+.btn-nuvos:hover { background: #047857; transform: translateY(-1px); }
 
 .nuvos-confirm {
   margin-top: 14px;
@@ -1310,7 +1310,7 @@ body {
    NUVOS AI SECTION
 ═══════════════════════════════════════ */
 .nuvos-section {
-  background: #08050f;
+  background: #040f0a;
   color: var(--white);
 }
 
@@ -1335,7 +1335,7 @@ body {
 
 .nuvo-spin-dot {
   width: 8px; height: 8px;
-  border: 2px solid rgba(167,139,250,0.3);
+  border: 2px solid rgba(52,211,153,0.3);
   border-top-color: var(--purple-light);
   border-radius: 50%;
   display: inline-block;
@@ -1353,7 +1353,7 @@ body {
 }
 
 .nuvos-hero-title span {
-  background: linear-gradient(135deg, var(--purple-light), #7c3aed);
+  background: linear-gradient(135deg, var(--purple-light), #059669);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1386,18 +1386,18 @@ body {
 }
 
 .nuvos-feat {
-  background: #08050f;
+  background: #040f0a;
   padding: 36px 30px;
   transition: background 0.2s;
 }
 
-.nuvos-feat:hover { background: #0f0b1a; }
+.nuvos-feat:hover { background: #071a14; }
 
 .nuvos-feat-icon {
   width: 44px; height: 44px;
   border-radius: 11px;
-  background: rgba(124,58,237,0.12);
-  border: 1px solid rgba(124,58,237,0.2);
+  background: rgba(5,150,105,0.12);
+  border: 1px solid rgba(5,150,105,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1484,8 +1484,8 @@ body {
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 @keyframes nuvo-pulse {
-  0%, 100% { opacity: 1; text-shadow: 0 0 30px rgba(124,58,237,0.4); }
-  50%       { opacity: 0.65; text-shadow: 0 0 60px rgba(124,58,237,0.7); }
+  0%, 100% { opacity: 1; text-shadow: 0 0 30px rgba(5,150,105,0.4); }
+  50%       { opacity: 0.65; text-shadow: 0 0 60px rgba(5,150,105,0.7); }
 }
 
 @keyframes nuvo-spin { to { transform: rotate(360deg); } }
@@ -1499,27 +1499,73 @@ body {
    RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hero-image { order: -1; max-width: 280px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-image { order: -1; max-width: 240px; margin: 0 auto; }
   .about-grid { grid-template-columns: 1fr; gap: 52px; }
   .philosophy-grid { grid-template-columns: 1fr; }
-  .nuvo-featured { grid-template-columns: 1fr; }
-  .nuvo-featured-right { flex-direction: row; justify-content: flex-start; margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .nuvo-featured { grid-template-columns: 1fr; padding: 32px; }
+  .nuvo-featured-right { flex-direction: row; justify-content: flex-start; gap: 20px; margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); align-items: center; }
   .nuvos-features-grid { grid-template-columns: 1fr 1fr; }
+  .teaser-inner { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 680px) {
-  :root { --section-pad: 72px; }
-  .container { padding: 0 24px; }
-  .nav-inner { padding: 0 24px; }
+  :root { --section-pad: 64px; }
+
+  .container { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; gap: 16px; }
   .nav-links { display: none; }
-  .ebook-card { flex-direction: column; }
-  .ebook-cover { width: 100%; min-height: 200px; }
-  .ebook-body { padding: 28px 24px; }
-  .products-grid { grid-template-columns: 1fr; }
-  .content-grid { grid-template-columns: 1fr; }
-  .nuvos-features-grid { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .hero-cta { flex-direction: column; align-items: flex-start; }
+
+  /* Hero */
+  .hero { padding: 100px 0 64px; min-height: auto; }
+  .hero-inner { gap: 32px; text-align: center; }
+  .hero-image { max-width: 180px; margin: 0 auto; }
+  .hero-eyebrow { justify-content: center; }
+  .hero-desc { font-size: 15px; margin: 0 auto 32px; }
+  .hero-cta { justify-content: center; }
   .hero-badge { display: none; }
+
+  /* About */
+  .about-text h2 { font-size: 26px; }
+  .about-text p { font-size: 14px; }
+  .pillar-list li { font-size: 14px; padding: 16px 0; }
+
+  /* Philosophy */
+  .philosophy-card { padding: 28px 24px; }
+  .philosophy-card h3 { font-size: 17px; }
+  .philosophy-card p { font-size: 13px; }
+
+  /* Content */
+  .content-grid { grid-template-columns: 1fr; gap: 12px; }
+  .content-card { padding: 24px 20px; }
+
+  /* Products */
+  .ebook-card { flex-direction: column; }
+  .ebook-cover { width: 100%; padding: 20px 32px; max-height: 260px; }
+  .ebook-cover img { max-height: 220px; width: auto; margin: 0 auto; }
+  .ebook-body { padding: 24px 20px; }
+  .ebook-body h3 { font-size: 20px; }
+  .products-grid { grid-template-columns: 1fr; gap: 12px; }
+  .product-card { padding: 22px 20px; }
+  .nuvo-featured { padding: 24px 20px; }
+  .nuvo-title { font-size: 30px; }
+
+  /* Teaser */
+  .nuvos-teaser { padding: 64px 0; }
+  .teaser-title { font-size: 30px; }
+  .app-mockup { font-size: 13px; }
+
+  /* Nuvos section */
+  .nuvos-features-grid { grid-template-columns: 1fr; }
+  .nuvos-feat { padding: 24px 20px; }
+  .nuvos-hero-title { font-size: 56px; }
+
+  /* Waitlist */
+  .nuvos-form { flex-direction: column; align-items: stretch; }
+  .nuvos-form .newsletter-input { max-width: 100%; }
+  .btn-nuvos { justify-content: center; }
+
+  /* Footer */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
