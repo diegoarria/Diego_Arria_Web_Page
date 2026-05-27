@@ -28,6 +28,23 @@ function handleNuvos(e) {
   }
 }
 
+// Beta registration form
+function handleBeta(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).then(() => {
+    form.style.display = 'none';
+    document.getElementById('beta-confirm').style.display = 'block';
+  }).catch(() => {
+    alert('Error al enviar. Por favor intenta de nuevo.');
+  });
+}
+
 // Newsletter form
 function handleSubscribe(e) {
   e.preventDefault();
