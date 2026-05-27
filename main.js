@@ -29,32 +29,34 @@ function handleNuvos(e) {
 }
 
 // Beta registration form
-const BETA_TOTAL = 20;
-
-function getBetaCount() {
-  return parseInt(localStorage.getItem('beta_submissions') || '0', 10);
-}
-
-function updateBetaCounter() {
-  const used = getBetaCount();
-  const remaining = Math.max(0, BETA_TOTAL - used);
+function updateBetaCounter(remaining) {
   const numEl = document.querySelector('.beta-spots-num');
   const noteEl = document.querySelector('.beta-note');
   if (numEl) numEl.textContent = remaining;
-  if (remaining === 0) closeBetaForm();
   if (noteEl) noteEl.textContent = `${remaining} lugar${remaining !== 1 ? 'es' : ''} restante${remaining !== 1 ? 's' : ''}. Una vez lleno el cupo, el registro se cerrará automáticamente.`;
+  if (remaining === 0) closeBetaForm();
 }
 
 function closeBetaForm() {
   const form = document.querySelector('.beta-form');
   const card = document.querySelector('.beta-form-card');
   if (form) form.style.display = 'none';
-  if (card) {
+  if (card && !card.querySelector('.beta-confirm')) {
     const closed = document.createElement('div');
     closed.className = 'beta-confirm';
     closed.style.display = 'block';
     closed.innerHTML = '<div class="confirm-check">✗</div><h3>Cupo lleno</h3><p>Los 20 lugares de la versión Beta ya fueron ocupados. Deja tu email en la lista de espera de Nuvos AI para ser el primero en saber del lanzamiento oficial.</p>';
     card.appendChild(closed);
+  }
+}
+
+async function fetchBetaCount() {
+  try {
+    const res = await fetch('/.netlify/functions/beta-count');
+    const data = await res.json();
+    updateBetaCounter(data.remaining);
+  } catch {
+    // Si falla la función, no cambia el número del HTML
   }
 }
 
@@ -67,18 +69,15 @@ function handleBeta(e) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data).toString()
   }).then(() => {
-    const used = getBetaCount() + 1;
-    localStorage.setItem('beta_submissions', used);
     form.style.display = 'none';
     document.getElementById('beta-confirm').style.display = 'block';
-    updateBetaCounter();
+    fetchBetaCount();
   }).catch(() => {
     alert('Error al enviar. Por favor intenta de nuevo.');
   });
 }
 
-// Init beta counter on load
-document.addEventListener('DOMContentLoaded', updateBetaCounter);
+document.addEventListener('DOMContentLoaded', fetchBetaCount);
 
 // Newsletter form
 function handleSubscribe(e) {
