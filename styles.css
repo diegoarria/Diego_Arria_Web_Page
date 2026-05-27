@@ -11,16 +11,16 @@
   --ink:         #0D0D10;
   --ink-2:       #161619;
   --ink-3:       #222228;
-  --gold:        #059669;
-  --gold-light:  #34d399;
-  --gold-pale:   #d1fae5;
+  --gold:        #16A34A;
+  --gold-light:  #22C55E;
+  --gold-pale:   #dcfce7;
   --text:        #111114;
   --muted:       #6B6B75;
   --muted-2:     #9A9AA4;
   --border:      #E2DDD6;
   --border-dark: rgba(255,255,255,0.08);
-  --purple:      #059669;
-  --purple-light:#34d399;
+  --purple:      #16A34A;
+  --purple-light:#22C55E;
   --white:       #FFFFFF;
 
   /* Type */
@@ -384,7 +384,7 @@ body {
    NUVOS TEASER
 ═══════════════════════════════════════ */
 .nuvos-teaser {
-  background: #030d08;
+  background: #020d04;
   padding: 96px 0;
   position: relative;
   overflow: hidden;
@@ -439,7 +439,7 @@ body {
 }
 
 .teaser-title span {
-  background: linear-gradient(135deg, var(--purple-light) 0%, #6ee7b7 100%);
+  background: linear-gradient(135deg, var(--purple-light) 0%, #4ADE80 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -469,14 +469,14 @@ body {
 }
 
 .teaser-cta:hover {
-  background: #047857;
+  background: #16A34A;
   transform: translateY(-2px);
   box-shadow: 0 0 48px rgba(5,150,105,0.5);
 }
 
 /* App mockup */
 .app-mockup {
-  background: #071a14;
+  background: #041f0d;
   border: 1px solid rgba(5,150,105,0.25);
   border-radius: 16px;
   overflow: hidden;
@@ -488,7 +488,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
-  background: #041410;
+  background: #031a08;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -555,7 +555,7 @@ body {
 .chat-avatar {
   width: 28px; height: 28px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--purple), #10b981);
+  background: linear-gradient(135deg, var(--purple), #22C55E);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -631,7 +631,7 @@ body {
 }
 
 .bar.active {
-  background: linear-gradient(180deg, #10b981, #059669);
+  background: linear-gradient(180deg, #22C55E, #16A34A);
   box-shadow: 0 0 12px rgba(5,150,105,0.5);
 }
 
@@ -1125,7 +1125,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 220px;
   gap: 0;
-  background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022c22 100%);
+  background: linear-gradient(135deg, #052010 0%, #0a3d1f 50%, #052010 100%);
   border-radius: 18px;
   overflow: hidden;
   padding: 44px;
@@ -1316,7 +1316,7 @@ body {
   transition: background 0.15s, transform 0.12s;
 }
 
-.btn-nuvos:hover { background: #047857; transform: translateY(-1px); }
+.btn-nuvos:hover { background: #16A34A; transform: translateY(-1px); }
 
 .nuvos-confirm {
   margin-top: 14px;
@@ -1372,7 +1372,7 @@ body {
 }
 
 .nuvos-hero-title span {
-  background: linear-gradient(135deg, var(--purple-light), #059669);
+  background: linear-gradient(135deg, var(--purple-light), #16A34A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1410,7 +1410,7 @@ body {
   transition: background 0.2s;
 }
 
-.nuvos-feat:hover { background: #071a14; }
+.nuvos-feat:hover { background: #041f0d; }
 
 .nuvos-feat-icon {
   width: 44px; height: 44px;
@@ -1666,7 +1666,7 @@ body {
   font-size: 130px;
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(135deg, #34d399, #059669);
+  background: linear-gradient(135deg, #4ADE80, #16A34A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1858,7 +1858,7 @@ body {
 
 .btn-beta {
   width: 100%;
-  background: linear-gradient(135deg, #059669, #34d399);
+  background: linear-gradient(135deg, #16A34A, #22C55E);
   color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -1892,7 +1892,7 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #059669, #34d399);
+  background: linear-gradient(135deg, #16A34A, #22C55E);
   display: flex;
   align-items: center;
   justify-content: center;
