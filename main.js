@@ -51,7 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
   function startAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(() => goTo(current + 1), 3500);
+    autoTimer = setInterval(() => goTo(current + 1), 7000);
   }
 
   document.addEventListener('DOMContentLoaded', init);
