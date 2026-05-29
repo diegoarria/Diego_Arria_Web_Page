@@ -478,7 +478,7 @@ body {
 .nuvos-carousel {
   position: relative;
   width: 100%;
-  max-width: 340px;
+  max-width: 240px;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
