@@ -21,7 +21,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 (function () {
   let current = 0;
   let autoTimer;
-  const total = 7;
+  const total = 8;
 
   function init() {
     const dots = document.getElementById('carouselDots');
