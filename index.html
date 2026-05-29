@@ -77,43 +77,20 @@
         </div>
 
         <div class="teaser-right">
-          <div class="app-mockup">
-            <div class="app-bar">
-              <div class="app-bar-dots">
-                <span></span><span></span><span></span>
-              </div>
-              <span class="app-bar-title">Nuvos AI</span>
-              <div class="app-bar-status">
-                <span class="status-dot"></span> En vivo
-              </div>
+          <div class="nuvos-carousel" id="nuvosCarousel">
+            <div class="carousel-track" id="carouselTrack">
+              <img src="nuvos-screens/1.png" alt="Nuvos AI - Chat con IA" class="carousel-slide" />
+              <img src="nuvos-screens/2.png" alt="Nuvos AI - Mi Portafolio" class="carousel-slide" />
+              <img src="nuvos-screens/3.png" alt="Nuvos AI - Stress Test" class="carousel-slide" />
+              <img src="nuvos-screens/4.png" alt="Nuvos AI - Pantalla 4" class="carousel-slide" />
+              <img src="nuvos-screens/5.png" alt="Nuvos AI - Pantalla 5" class="carousel-slide" />
+              <img src="nuvos-screens/6.png" alt="Nuvos AI - Pantalla 6" class="carousel-slide" />
+              <img src="nuvos-screens/7.png" alt="Nuvos AI - Pantalla 7" class="carousel-slide" />
+              <img src="nuvos-screens/8.png" alt="Nuvos AI - Pantalla 8" class="carousel-slide" />
             </div>
-            <div class="app-body">
-              <div class="chat-msg ai">
-                <div class="chat-avatar">N</div>
-                <div class="chat-bubble">¿Cómo empiezo a invertir con $5,000 MXN?</div>
-              </div>
-              <div class="chat-msg user">
-                <div class="chat-bubble">Con $5,000 MXN puedes comenzar con un ETF diversificado como el VOO o SIC desde GBM+. Te muestro una simulación →</div>
-              </div>
-              <div class="chat-msg ai">
-                <div class="chat-avatar">N</div>
-                <div class="chat-bubble">Creando tu portafolio personalizado...</div>
-              </div>
-              <div class="app-chart">
-                <div class="chart-header">
-                  <span>Simulación a 10 años</span>
-                  <span class="chart-value">+184%</span>
-                </div>
-                <div class="chart-bars">
-                  <div class="bar" style="height:30%"><span>Año 1</span></div>
-                  <div class="bar" style="height:45%"><span>Año 2</span></div>
-                  <div class="bar" style="height:55%"><span>Año 3</span></div>
-                  <div class="bar" style="height:65%"><span>Año 5</span></div>
-                  <div class="bar" style="height:80%"><span>Año 7</span></div>
-                  <div class="bar active" style="height:100%"><span>Año 10</span></div>
-                </div>
-              </div>
-            </div>
+            <button class="carousel-btn carousel-prev" onclick="carouselMove(-1)" aria-label="Anterior">‹</button>
+            <button class="carousel-btn carousel-next" onclick="carouselMove(1)" aria-label="Siguiente">›</button>
+            <div class="carousel-dots" id="carouselDots"></div>
           </div>
         </div>
 

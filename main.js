@@ -17,6 +17,46 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// Nuvos AI app carousel
+(function () {
+  let current = 0;
+  let autoTimer;
+  const total = 8;
+
+  function init() {
+    const dots = document.getElementById('carouselDots');
+    if (!dots) return;
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('span');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dots.appendChild(d);
+    }
+    startAuto();
+  }
+
+  function goTo(index) {
+    current = (index + total) % total;
+    document.getElementById('carouselTrack').style.transform = `translateX(-${current * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+  }
+
+  window.carouselMove = function (dir) {
+    clearInterval(autoTimer);
+    goTo(current + dir);
+    startAuto();
+  };
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 3500);
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
+
 // Nuvos AI waitlist form
 function handleNuvos(e) {
   e.preventDefault();
