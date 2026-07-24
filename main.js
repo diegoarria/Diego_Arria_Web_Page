@@ -57,68 +57,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   document.addEventListener('DOMContentLoaded', init);
 })();
 
-// Nuvos AI waitlist form
-function handleNuvos(e) {
-  e.preventDefault();
-  const input = e.target.querySelector('input[type="email"]');
-  const confirm = document.getElementById('nuvos-confirm');
-  if (input.value) {
-    e.target.style.display = 'none';
-    confirm.style.display = 'block';
-  }
-}
-
-// Beta registration form
-function updateBetaCounter(remaining) {
-  const numEl = document.querySelector('.beta-spots-num');
-  const noteEl = document.querySelector('.beta-note');
-  if (numEl) numEl.textContent = remaining;
-  if (noteEl) noteEl.textContent = `${remaining} lugar${remaining !== 1 ? 'es' : ''} restante${remaining !== 1 ? 's' : ''}. Una vez lleno el cupo, el registro se cerrará automáticamente.`;
-  if (remaining === 0) closeBetaForm();
-}
-
-function closeBetaForm() {
-  const form = document.querySelector('.beta-form');
-  const card = document.querySelector('.beta-form-card');
-  if (form) form.style.display = 'none';
-  if (card && !card.querySelector('.beta-confirm')) {
-    const closed = document.createElement('div');
-    closed.className = 'beta-confirm';
-    closed.style.display = 'block';
-    closed.innerHTML = '<div class="confirm-check">✗</div><h3>Cupo lleno</h3><p>Los 20 lugares de la versión Beta ya fueron ocupados. Deja tu email en la lista de espera de Nuvos AI para ser el primero en saber del lanzamiento oficial.</p>';
-    card.appendChild(closed);
-  }
-}
-
-async function fetchBetaCount() {
-  try {
-    const res = await fetch('/.netlify/functions/beta-count');
-    const data = await res.json();
-    updateBetaCounter(data.remaining);
-  } catch {
-    // Si falla la función, no cambia el número del HTML
-  }
-}
-
-function handleBeta(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(data).toString()
-  }).then(() => {
-    form.style.display = 'none';
-    document.getElementById('beta-confirm').style.display = 'block';
-    fetchBetaCount();
-  }).catch(() => {
-    alert('Error al enviar. Por favor intenta de nuevo.');
-  });
-}
-
-document.addEventListener('DOMContentLoaded', fetchBetaCount);
-
 // Newsletter form
 function handleSubscribe(e) {
   e.preventDefault();
@@ -142,7 +80,7 @@ const observer = new IntersectionObserver(entries => {
 
 // Fade up — general cards and blocks
 document.querySelectorAll(
-  '.philosophy-card, .content-card, .product-card, .nuvos-feat, .ebook-card, .nuvo-featured, .nuvos-waitlist, .topics-wrap'
+  '.philosophy-card, .content-card, .product-card, .ebook-card, .nuvo-featured, .topics-wrap'
 ).forEach((el, i) => {
   el.classList.add('anim-fade-up');
   el.style.transitionDelay = `${(i % 4) * 80}ms`;
@@ -167,7 +105,7 @@ document.querySelectorAll(
 
 // Scale in — section labels and titles
 document.querySelectorAll(
-  '.section-label, .section-title, .nuvos-hero-title, .teaser-title'
+  '.section-label, .section-title, .teaser-title'
 ).forEach(el => {
   el.classList.add('anim-scale');
   observer.observe(el);
