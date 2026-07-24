@@ -421,12 +421,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--purple-light);
   margin-bottom: 24px;
+  animation: nuvo-blink 1.6s ease-in-out infinite;
 }
 
 .teaser-title {
@@ -1318,7 +1319,7 @@ body {
 }
 
 .nuvo-coming {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1326,17 +1327,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.nuvo-coming::before {
-  content: '';
-  display: inline-block;
-  width: 10px; height: 10px;
-  border: 2px solid rgba(52,211,153,0.3);
-  border-top-color: var(--purple-light);
-  border-radius: 50%;
-  animation: nuvo-spin 0.9s linear infinite;
-  flex-shrink: 0;
+  animation: nuvo-blink 1.6s ease-in-out infinite;
 }
 
 .nuvo-tagline {
@@ -1458,15 +1449,6 @@ body {
   text-transform: uppercase;
   color: var(--purple-light);
   margin-bottom: 24px;
-}
-
-.nuvo-spin-dot {
-  width: 8px; height: 8px;
-  border: 2px solid rgba(52,211,153,0.3);
-  border-top-color: var(--purple-light);
-  border-radius: 50%;
-  display: inline-block;
-  animation: nuvo-spin 0.9s linear infinite;
 }
 
 .nuvos-hero-title {
@@ -1649,7 +1631,10 @@ body {
   50%       { opacity: 0.65; text-shadow: 0 0 60px rgba(5,150,105,0.7); }
 }
 
-@keyframes nuvo-spin { to { transform: rotate(360deg); } }
+@keyframes nuvo-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
 
 @keyframes dot-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
